@@ -5,6 +5,8 @@
 	<title></title>
 
 	<link rel="stylesheet" type="text/css" href="Estilos/Estilo01.css">
+	<link rel="stylesheet" href="estilos/EstiloCarrusel.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -54,52 +56,56 @@
 		</div>
 	</nav>
 
-	<div id="fotosDeMascotas"> 
-		<div id="pitbull">
-			<img src="imagenes/pitbull.jpg">
-			<p>Pitbull</p>
-			
+	<div class="imagenesPerros contenido">
+		<div class="letreroPerroYControles">
+			<h3>Perros en adopción</h3>
+			<div class="indicadores">
+				<button></button>
+				<button></button>
+			</div>
 		</div>
 
-		<div id="pastor aleman">
-			<img src="imagenes/pastor-aleman.jpg">
-			<p>Pastor alemán</p>
-			
-		</div>
+		<div class="contenedorPrincipal">
+			<button role="button" id="flechaIzquierda" class="flechaIzquierda"><i class="fas fa-angle-left"></i></button>
 
-		<div id="labrador">
-			<img src="imagenes/labrador.jpg">
-			<p>Labrador</p>
-		</div>
+			<div class="contenedorCarrusel">
+				<div class="carrusel">
+					<div class="fotoPerro">
+						<a href="#"><img src="imagenes/carrusel/Labrador-retriever.jpg" alt="Labrador-retriever"></a>
+					</div>
 
-		<div id="golden">
-			<img src="imagenes/golden-retriever.jpg">
-			<p>Golden Retriever</p>
-		</div>
+					<div class="fotoPerro">
+						<a href="#"><img src="imagenes/carrusel/Golden-retriever.jpg" alt="Golden-retriever"></a>
+					</div>
 
-		<div id="doberman">
-			<img src="imagenes/doberman.jpg">
-			<p>Doberman</p>
-		</div>
+					<div class="fotoPerro">
+						<a href="#"><img src="imagenes/carrusel/Beagle.jpg" alt="Beagle"></a>
+					</div>
 
-		<div id="doberman">
-			<img src="imagenes/doberman.jpg">
-			<p>Doberman</p>
-		</div>
+					<div class="fotoPerro">
+						<a href="#"><img src="imagenes/carrusel/Pitbull.jpg" alt="Pitbull"></a>
+					</div>
 
-		<div id="doberman">
-			<img src="imagenes/doberman.jpg">
-			<p>Doberman</p>
-		</div>
+					<div class="fotoPerro">
+						<a href="#"><img src="imagenes/carrusel/Pastor-aleman.jpg" alt="Pastor-aleman"></a>
+					</div>
 
-		<div id="doberman">
-			<img src="imagenes/doberman.jpg">
-			<p>Doberman</p>
-		</div>
+					<div class="fotoPerro">
+						<a href="#"><img src="imagenes/carrusel/Rotweiler.jpg" alt="Rotweiler"></a>
+					</div>
 
-		<div id="doberman">
-			<img src="imagenes/doberman.jpg">
-			<p>Doberman</p>
+					<div class="fotoPerro">
+						<a href="#"><img src="imagenes/carrusel/Boxer.jpg" alt="Boxer"></a>
+					</div>
+
+					<div class="fotoPerro">
+						<a href="#"><img src="imagenes/carrusel/San-Bernardo.jpg" alt="San-Bernardo"></a>
+					</div>
+				</div>
+			</div>
+
+			<button role="button" id="flechaDerecha" class="flechaDerecha"><i class="fas fa-angle-right"></i></button>
+				
 		</div>
 	</div>
 </body>
