@@ -1,8 +1,8 @@
 /*-------------------Esto es para el carrusel de imagenes-------------------*/
-
 .contenido{
-	width: 90%;
+	width: 80%;
 	margin: auto;
+	/*padding: 5px;*/
 }
 
 .imagenesPerros{
@@ -47,9 +47,9 @@
 
 .imagenesPerros .contenedorCarrusel{
 	width: 100%;
-	padding: 20px 0;
 	overflow: hidden;
 	scroll-behavior: smooth;
+	margin: 5px;
 }
 
 .imagenesPerros .contenedorCarrusel .carrusel{
@@ -64,7 +64,7 @@
 }
 
 .imagenesPerros .contenedorCarrusel .carrusel .fotoPerro.hover{
-	transform: scale(1.2);
+	transform: scale(1.15);
 	transform-origin: center;
 }
 
@@ -98,6 +98,7 @@
 	margin-right: 2px;
 }
 
-.letreroPerroYControles .indicadores button:hover{
+.letreroPerroYControles .indicadores button:hover,
+.letreroPerroYControles .indicadores button.activo{
 	background: red;	
 }
