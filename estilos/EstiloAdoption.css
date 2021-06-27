@@ -1,0 +1,35 @@
+.gallery{
+	display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    margin-top:  3rem;
+}
+
+.fotoPerro{
+	transition: 0.3s ease all;
+	box-shadow: 0 0 0 1em #F4AAB9,
+              0 0 0 2em #66CCFF;
+    margin: 3em;
+    width: 15rem;
+}
+.fotoPerro img, .fotoPerro a{
+    width: 15rem;
+    height: 15rem;
+}
+
+.fotoPerro:hover{
+	transform: scale(1.15);
+	transform-origin: center;
+
+}
+figcaption {
+    background-color: beige;
+    display:none; 
+    transition: all .5s;
+}
+
+.fotoPerro:hover figcaption {
+    display:block;
+    transition: all .5s;
+}
