@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="estilos/contactanos.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -11,42 +12,61 @@
     <title>Contacto!</title>
   </head>
   <body>
-    <h1>Contacto!</h1>
-	<ul>
-  <li>Jose Alcívar
-  	<ul>
-  		<li>Desarrollador</li>
-		<li>📞: +593 98 705 4625</li>
-  		<li>📧: josealci@espol.edu.ec</li>
-  		
-  	</ul>
-  </li>
-  <li>Gustavo Chonillo
-  	<ul>
-		<li>Desarrollador</li>
-  		<li>📞: +593 98 084 9681</li>
-  		<li>📧: guchvera@espol.edu.ec</li>
-  	</ul>
-  </li>
-  <li>Andrés Morales
-  	<ul>
-		<li>Desarrollador</li>
-  		<li>📞: +593 99 996 3375</li>
-  		<li>📧: aamorale@espol.edu.ec</li>
-  	</ul>
-  </li>
-    <li>Kelly Vaque
-  	<ul>
-		<li>Desarrolladora</li>
-  		<li>📞: +593 99 264 8549</li>
-  		<li>📧: ksvaque@espol.edu.ec</li>
-  	</ul>
-  </li>
-</ul>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="#">Adopción de mascotas</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+ 
+         <div class="collapse navbar-collapse" id="navbarColor01">
+             <ul class="navbar-nav me-auto">
+               <li class="nav-item">
+                   <a class="nav-link active" href="#">Principal
+                   <span class="visually-hidden">(current)</span>
+                   </a>
+               </li>
+               
+               <li class="nav-item">
+                   <a class="nav-link" href="#">Equipo de desarrollo</a>
+               </li>
+               
+               <li class="nav-item">
+                   <a class="nav-link" href="#">Noticias</a>
+               </li>
+           
+               <li class="nav-item">
+                   <a class="nav-link" href="contact.html">Contáctenos</a>
+               </li>
+           
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                   <div class="dropdown-menu">
+                     <a class="dropdown-item" href="#">Action</a>
+                     <a class="dropdown-item" href="#">Another action</a>
+                     <a class="dropdown-item" href="#">Something else here</a>
+                   <div class="dropdown-divider"></div>
+                   <a class="dropdown-item" href="#">Separated link</a>
+                   </div>
+               </li>
+             </ul>
+         
+             <form class="d-flex">
+               <input class="form-control me-sm-2" type="text" placeholder="Buscar aquí">
+               <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+             </form>
+         </div>
+     </div>
+   </nav>
+
     
-	  
-    <h1>Contactanos!</h1>
-    <div class="container" style="width:600px;">
+    <h1 class="hcon">Contáctanos</h1>
+    <div class="imagenContactanos">
+      <img src="imagenes/contactenos.jpeg" alt="Imagen-Contactanos">
+    </div>
+
+    <div class="container" ">
       <form action="contact.html">
         
         <div class="row">
@@ -81,11 +101,12 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-25">
+          <div class="col-12">
             <label for="detalle">Detalle</label>
           </div>
-          <div class="col-75">
+          <div class="col-12">
             <textarea id="detalle" name="detalle" placeholder="Detalle..." style="height:200px" style=></textarea>
+
           </div>
   
         </div>
