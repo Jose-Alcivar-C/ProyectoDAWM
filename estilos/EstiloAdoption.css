@@ -160,3 +160,9 @@ label#cerrar{
     grid-row: 7;
     align-self: start;
 }
+
+div#botonAdoptar{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
