@@ -1,12 +1,13 @@
 /*-------------------Esto es para el carrusel de imagenes-------------------*/
 .contenido{
-	width: 80%;
+	width: 40%;
 	margin: auto;
+  margin-top: 20px;
 	/*padding: 5px;*/
 }
 
 .imagenesPerros{
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	background-color: #000000;
 }
 
@@ -58,7 +59,7 @@
 }
 
 .imagenesPerros .contenedorCarrusel .carrusel .fotoPerro{
-	min-width: 20%;
+	min-width: 100%;
 	transition: 0.3s ease all;
 	box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
 }
@@ -80,8 +81,9 @@
 
 .letreroPerroYControles{
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+  justify-content: center;
+  padding-top: 10px;
 }
 
 .letreroPerroYControles h3{
@@ -89,7 +91,13 @@
 	font-size: 25px;
 }
 
-.letreroPerroYControles .indicadores button{
+.indicadores{
+  position: absolute;
+  bottom: 10px;
+  right:45%;
+}
+
+.indicadores button{
 	background: #ffffff;
 	height: 6px;
 	width: 12px;
@@ -98,7 +106,7 @@
 	margin-right: 2px;
 }
 
-.letreroPerroYControles .indicadores button:hover,
-.letreroPerroYControles .indicadores button.activo{
+.indicadores button:hover,
+.indicadores button.activo{
 	background: red;	
 }

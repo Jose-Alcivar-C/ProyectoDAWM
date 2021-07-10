@@ -6,8 +6,9 @@ const flechaDerecha = document.getElementById("flechaDerecha");
 
 //-----------------------Eventos para las flechas-------------------------
 
-flechaDerecha.addEventListener("click", ()=>{
-	fila.scrollLeft += fila.offsetWidth;
+function siguiente(){
+  
+  fila.scrollLeft += fila.offsetWidth;
 
 	const luzActiva = document.querySelector(".indicadores .activo");
 
@@ -15,10 +16,12 @@ flechaDerecha.addEventListener("click", ()=>{
 		luzActiva.nextSibling.classList.add("activo");
 		luzActiva.classList.remove("activo");
 	}
-});
+}
 
-flechaIzquierda.addEventListener("click", ()=>{
-	fila.scrollLeft -= fila.offsetWidth;
+flechaDerecha.addEventListener("click", siguiente);
+
+function anterior(){
+  fila.scrollLeft -= fila.offsetWidth;
 
 	const luzActiva = document.querySelector(".indicadores .activo");
 
@@ -26,9 +29,11 @@ flechaIzquierda.addEventListener("click", ()=>{
 		luzActiva.previousSibling.classList.add("activo");
 		luzActiva.classList.remove("activo");
 	}
-});
+}
 
-const numeroHojas = Math.ceil(perro.length/5);
+flechaIzquierda.addEventListener("click", anterior);
+
+const numeroHojas = Math.ceil(perro.length/1);
 
 for(let i=0; i < numeroHojas; i++){
 	const boton = document.createElement("button");
@@ -59,4 +64,3 @@ perro.forEach((foto)=>{
 fila.addEventListener("mouseleave",()=>{
 	perro.forEach(fo => fo.classList.remove("hover"));
 });
-

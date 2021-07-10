@@ -1,0 +1,20 @@
+#misionVision{
+  max-width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr); 
+}
+
+#misionVision > div{
+  background-color: rgb(168, 237, 255);
+  padding: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(200, 250, 255);
+}
+
+#misionVision > div:hover{
+  transform: scale(1.2);
+  background-color: rgb(200, 250, 255);
+  border-color: rgb(168, 237, 255);
+}
