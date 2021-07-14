@@ -25,11 +25,17 @@
 .fotoNoticia img{
   height: 100%;
   width: 90%;
+  transition: 0.4s ease all;
+}
+
+.fotoNoticia img:hover{
+   transform: scale(1.2);
 }
 
 .fotoNoticia{
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 div.fotoNoticia + div{
@@ -49,5 +55,9 @@ p.tituloNoticia{
 p.desNoticia + a p{
   text-align:  center;
   font-weight: bold;
+}
+
+.oculto{
+  display: none;
 }
 

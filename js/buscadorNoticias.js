@@ -31,20 +31,65 @@ function llenarNoticias()
                       <div>
                         <p class="tituloNoticia">${titulo}</p>
                         <p class="desNoticia">${descripcion}</p>
-                        <a href="${enlace}"><p>Visitar noticia</p></a>
+                        <a href="${enlace}" target="_blank"><p>Visitar noticia</p></a>
                       </div> 
                     </div>
                   </div>`
 
       contenedor.innerHTML+=plantilla;
-
-      console.log(titulo)
     }
 
   }).catch(console.error);
 }
 
 llenarNoticias();
+
+
+
+let boton = document.getElementById("buscador");
+
+function filtrarNoticias()
+{
+  let buscado = document.getElementById("buscado").value;
+
+  if(!(buscado===""))
+  {
+    buscado = buscado.toUpperCase();
+
+    let cajitas = document.getElementsByClassName("cajaNoticia");
+
+    for(let i=0; i<cajitas.length; i++)
+    {
+      let tit=cajitas[i].getElementsByTagName("p")[0].textContent.toUpperCase();
+      let des=cajitas[i].getElementsByTagName("p")[1].textContent.toUpperCase()
+
+      if( !(tit.includes(buscado) || des.includes(buscado)) )
+      {
+        cajitas[i].classList.add("oculto");
+      }
+
+      else
+      {
+        cajitas[i].classList.remove("oculto")
+      }
+    }
+  }
+}
+filtrarNoticias()
+
+boton.addEventListener("click", filtrarNoticias)
+
+let barraBusqueda = document.getElementById("buscado");
+
+barraBusqueda.addEventListener("keydown", function (e) 
+{
+  if (e.keyCode === 13 && !e.shiftKey) 
+  { 
+    filtrarNoticias()
+  }
+});
+
+
 
 
 
