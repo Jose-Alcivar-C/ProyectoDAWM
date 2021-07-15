@@ -1,6 +1,3 @@
-
-let contenedor = document.getElementById("seccionNoticias");
-
 function llenarNoticias()
 {
   fetch("datosGenerados/generado.json")
@@ -8,6 +5,7 @@ function llenarNoticias()
   .then(data => 
   {
     const divs = [];
+    let contenedor = document.getElementById("seccionNoticias");
 
     for(let i=0; i<data.noticias.length;i++)
     {
@@ -15,20 +13,6 @@ function llenarNoticias()
       let descripcion = data.noticias[i].descripcion;
       let enlace = data.noticias[i].enlace;
       let ruta = data.noticias[i].foto;
-
-      /*plantilla =`<div class="cajaNoticia">
-                    <div class="elementosNoticia">
-                      <div class="fotoNoticia">
-                        <img src="${ruta}" alt="">
-                      </div>
-                      
-                      <div>
-                        <p class="tituloNoticia">${titulo}</p>
-                        <p class="desNoticia">${descripcion}</p>
-                        <a href="${enlace}" target="_blank"><p>Visitar noticia</p></a>
-                      </div> 
-                    </div>
-                  </div>`*/
 
       const p1 = React.createElement("p",{"className":"tituloNoticia"},titulo);
       const p2 = React.createElement("p",{"className":"desNoticia"},descripcion);
@@ -43,7 +27,7 @@ function llenarNoticias()
 
       const div1 = React.createElement("div",{"className":"cajaNoticia"},div2);
 
-      divs.push(div1)
+      divs.push(div1);
     }
     
     ReactDOM.render(divs, contenedor);
@@ -52,8 +36,6 @@ function llenarNoticias()
 }
 
 llenarNoticias();
-
-
 
 let boton = document.getElementById("buscador");
 
@@ -70,7 +52,8 @@ function filtrarNoticias()
     for(let i=0; i<cajitas.length; i++)
     {
       let tit=cajitas[i].getElementsByTagName("p")[0].textContent.toUpperCase();
-      let des=cajitas[i].getElementsByTagName("p")[1].textContent.toUpperCase()
+
+      let des=cajitas[i].getElementsByTagName("p")[1].textContent.toUpperCase();
 
       if( !(tit.includes(buscado) || des.includes(buscado)) )
       {
@@ -79,14 +62,14 @@ function filtrarNoticias()
 
       else
       {
-        cajitas[i].classList.remove("oculto")
+        cajitas[i].classList.remove("oculto");
       }
     }
   }
 }
-filtrarNoticias()
+filtrarNoticias();
 
-boton.addEventListener("click", filtrarNoticias)
+boton.addEventListener("click", filtrarNoticias);
 
 let barraBusqueda = document.getElementById("buscado");
 
@@ -94,7 +77,7 @@ barraBusqueda.addEventListener("keydown", function (e)
 {
   if (e.keyCode === 13 && !e.shiftKey) 
   { 
-    filtrarNoticias()
+    filtrarNoticias();
   }
 });
 
