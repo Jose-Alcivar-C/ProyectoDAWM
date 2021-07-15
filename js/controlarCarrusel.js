@@ -6,13 +6,14 @@ const flechaDerecha = document.getElementById("flechaDerecha");
 
 //-----------------------Eventos para las flechas-------------------------
 
-function siguiente(){
-  
+function siguiente()
+{
   fila.scrollLeft += fila.offsetWidth;
 
 	const luzActiva = document.querySelector(".indicadores .activo");
 
-	if(luzActiva.nextSibling){
+	if(luzActiva.nextSibling)
+  {
 		luzActiva.nextSibling.classList.add("activo");
 		luzActiva.classList.remove("activo");
 	}
@@ -20,12 +21,14 @@ function siguiente(){
 
 flechaDerecha.addEventListener("click", siguiente);
 
-function anterior(){
+function anterior()
+{
   fila.scrollLeft -= fila.offsetWidth;
 
 	const luzActiva = document.querySelector(".indicadores .activo");
 
-	if(luzActiva.previousSibling){
+	if(luzActiva.previousSibling)
+  {
 		luzActiva.previousSibling.classList.add("activo");
 		luzActiva.classList.remove("activo");
 	}
