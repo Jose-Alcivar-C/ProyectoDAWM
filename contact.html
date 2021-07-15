@@ -82,87 +82,98 @@
 
     </div>
 
-    <div class="row">
 
-      <div class="col-lg-6 mb-6">
+    <div class="container">
+      <div class="row">
 
-        <form >
+        <div class="col-lg-6 mb-6">
 
-          <div class="form-row ">
-            
-            <div class="form-group col-md-12">
+          <form >
+
+            <div class="form-row ">
               
-              <label for="nombre">Nombre</label>
+              <div class="form-group col-md-12">
+                
+                <label for="nombre">Nombre</label>
+                
+                <input type="nombre" class="form-control" id="inputEmail4" >
               
-              <input type="nombre" class="form-control" id="inputEmail4" >
+              </div>
+
+              <div class="form-group col-md-12">
+                
+                <label for="apellido">Apellido</label>
+                
+                <input type="apellido" class="form-control" id="inputPassword4" p>
+              
+              </div>
             
             </div>
 
             <div class="form-group col-md-12">
               
-              <label for="apellido">Apellido</label>
+              <label for="email">Email</label>
               
-              <input type="apellido" class="form-control" id="inputPassword4" p>
+              <input type="email" class="form-control" id="inputEmail4" >
             
             </div>
-          
-          </div>
-
-          <div class="form-group col-md-12">
-            
-            <label for="email">Email</label>
-            
-            <input type="email" class="form-control" id="inputEmail4" >
-          
-          </div>
-          
-          <div class="form-group">
-            
-            <label for="inputAddress">Direccion</label>
-            
-            <input type="text" class="form-control" id="inputAddress" >
-          
-          </div>
-
-          <div class="form-row">
             
             <div class="form-group col-md-12">
               
-              <label for="inputCity">Ciudad</label>
+              <label for="inputAddress">Año de nacimiento</label>
               
-              <input type="ciudad" class="form-control" id="inputCity">
+              <input type="date" class="form-control" id="start" name="trip-start" value="2021-07-16" min="2018-01-01" max="2030-12-31">
             
             </div>
 
-          </div>
-          
-          <div class="form-group justify-content-center">
-            
-            <div class="my-4">
+            <div class="form-row">
               
-              <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+              
+                <label for="exampleSelect1" class="form-label mt-1">Ciudad</label>
+                <select class="form-select" id="exampleSelect1" control-id="ControlID-11">
+                  <option>Guayaquil</option>
+                  <option>Duran</option>
+                  <option>Milagro</option>
+                  <option>Yaguachi</option>
+                  <option>Balzar</option>
+                </select>
+              
+
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Mensaje</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            
+            <div class="form-group justify-content-center">
+              
+              <div class="my-4">
+                
+                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+              
+              </div>
             
             </div>
           
-          </div>
-        
-        </form>
+          </form>
 
-      </div>
-
-      <div class="col-lg-6 mb-6">
-        
-        <div class="embed-responsive embed-responsive-16by9 " >
-          
-          <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9396.567440345614!2d-79.90938239228288!3d-2.180428613986888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1624850825288!5m2!1ses!2sec" allowfullscreen width: 100%>
-          </iframe>
-          
         </div>
 
+        <div class="col-lg-6 mb-16 ">
+          
+            
+              
+              <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9396.567440345614!2d-79.90938239228288!3d-2.180428613986888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1624850825288!5m2!1ses!2sec"  width="100%" height="90%" frameborder="0" style="border:0" allowfullscreen>
+              </iframe>
+              
+            
+          
+        </div>
+        
       </div>
-      
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     
   </body>
