@@ -64,3 +64,4 @@ perro.forEach((foto)=>{
 fila.addEventListener("mouseleave",()=>{
 	perro.forEach(fo => fo.classList.remove("hover"));
 });
+
