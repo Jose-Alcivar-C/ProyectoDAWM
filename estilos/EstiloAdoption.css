@@ -8,8 +8,8 @@
 
 .fotoPerro{
 	transition: 0.3s ease all;
-	box-shadow: 0 0 0 1em #F4AAB9,
-              0 0 0 2em #66CCFF;
+	box-shadow: 0 0 0 1em rgb(168, 237, 255),
+              0 0 0 2em #78c2ad;
     margin: 3em;
     width: 15rem;
 }
@@ -89,7 +89,7 @@ label#cerrar{
 }
 
 #modal{
-    background-color: rgba(00, 00, 00, 90%);
+    background-color: rgba(255, 255, 255, 0.9);
     position: fixed;
     top:-200vh;
     left:0;
