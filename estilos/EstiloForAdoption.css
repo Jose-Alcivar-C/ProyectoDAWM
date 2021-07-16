@@ -8,7 +8,7 @@
     --color-bg-1: #008080;
     --color-bg-2: #FEF9E7;
     --color-btn: #2196F3;
-    --color-header-step: orange;
+    --color-header-step: #2196F3;
     --color-shadow: #222;
     --color-border-input: #ddd;
 }
@@ -21,8 +21,9 @@
     min-height: 100vh;
     font-size: 16px;
     font-family: sans-serif;
-    background-image: linear-gradient(var(--color-bg-1), var(--color-bg-2));
     overflow: hidden;
+    background-color: #B4E3D6 !important;
+    /*background-image: linear-gradient(var(--color-bg-1), var(--color-bg-2));*/
 }
 
 /* Formulario */
@@ -45,7 +46,7 @@
 .progressbar__option {
     width: 100%;
     text-align: center;
-    font-size: .7rem;
+    font-size: 1rem;
     text-transform: uppercase;
     position: relative;
     color:black;
@@ -137,7 +138,7 @@
 /* header de step */
 .step__header {
     padding: 20px 15px;
-    background-color: var(--color-header-step);
+    background-color: rgb(168, 237, 255);
     border-radius: 3px 3px 0 0;
 }
 
