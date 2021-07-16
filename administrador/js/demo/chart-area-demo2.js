@@ -32,7 +32,7 @@ var ctx = document.getElementById("graficoDonaciones");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
     datasets: [{
       label: "Donaciones",
       lineTension: 0.3,
@@ -46,7 +46,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [20, 30, 40, 60, 90, 100, 125, 200, 230, 280, 290, 300],
+      data: [20, 30, 40, 60, 90, 100, 120],
     }],
   },
   options: {
