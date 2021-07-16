@@ -1,0 +1,104 @@
+{
+  "noticias":
+  [
+    { 
+      "titulo":"Kiko, un cachorro mestizo que encontró un hogar en   la Planta   de Tratamiento de Aguas Residuales de Quitumbe.", 
+  
+      "descripcion":"El destino de Federiko era incierto. Él y sus cinco hermanos habían nacido  hace pocos días cerca de una quebrada, en la parroquia Puengasí, en el    suroriente de Quito. Sin embargo, otros eran los planes destinados para el cachorro mestizo.",
+
+      "enlace":"https://www.eluniverso.com/larevista/2021/02/07/nota/9617427/jack-cachorro-defecto-congenito-dejaron-plantado-dia-adopcion/",
+
+      "foto":"imagenesRegistradas/noticia01.jpg"
+    },
+
+    {
+      "titulo":"Cuerpo de Agentes de Control Metropolitano de Quito entregó en adopción a 14 canes.",
+
+      "descripcion":"En las instalaciones del Cuerpo de Agentes de Control Metropolitano de Quito (CACMQ), se realizó la ceremonia de retiro y entrega en adopción de 14 canes, que fueron parte de la institución municipal, pero aún existen 21 canes que necesitan de un nuevo hogar.",
+
+      "enlace":"https://www.eluniverso.com/noticias/2020/08/19/nota/7948108/cuerpo-agentes-control-metropolitano-quito-entrego-adopcion-14/",
+
+      "foto":"imagenesRegistradas/noticia02.jpg"
+    },
+
+    {
+      "titulo":"Policía Nacional entregará en adopción una docena de perros adiestrados.",
+
+      "descripcion":"Un total de 44 canes fueron dados de baja, de los cuales doce pasaron a un proceso para ser entregados a familias de Quito, Imbabura, Ibarra, y Cayambe, según informó Luis Morales, jefe del CRAC. El resto se quedarán con sus guías, con los que han compartido un promedio de ocho años.",
+
+      "enlace":"https://www.eluniverso.com/noticias/2020/07/21/nota/7914699/adopcion-perros-policia-nacional-ecuador/",
+
+      "foto":"imagenesRegistradas/noticia03.jpg"
+    },
+
+    {
+      "titulo":"La pandemia hizo que aumenten las adopciones de perros y gatos.",
+
+      "descripcion":"Toda la ciudadanía del cantón puede adoptar un perro o gato en el albergue, para ello es necesario que se acerquen a las instalaciones de la entidad ubicadas en la vía a Píllaro de martes a sábado en el horario de 08:00 a 16:00.",
+
+      "enlace":"https://lahora.com.ec/tungurahua/noticia/1102332319/la-pandemia-hizo-que-aumenten-las-adopciones-de-perros-y-gatos",
+
+      "foto":"imagenesRegistradas/noticia04.jpg"
+    },
+
+    {
+      "titulo":"Reiki para mejorar el ánimo de las mascotas.",
+
+      "descripcion":"Mejorar el estado de ánimo, combatir el estrés y aliviar distintos dolores físicos son algunos de los usos del reiki en mascotas. Al igual que en los humanos, esta terapia alternativa se enfoca en los chakras o puntos energéticos de perros y gatos.",
+
+      "enlace":"https://www.elcomercio.com/narices-frias/reiki-terapia-animo-mascotas.html",
+
+      "foto":"imagenesRegistradas/noticia05.jpg"  
+    },
+
+    {
+      "titulo":"La historia de Jack, el cachorro con un defecto congénito al que dejaron plantado el día de su adopción.",
+
+      "descripcion":"Jack estaba en la espera de su día especial, ya que este cachorrito de nueve meses estaba a punto de ser adoptado. El pequeño American Bully estaba listo para la ocasión.",
+
+      "enlace":"https://www.eluniverso.com/larevista/2021/02/07/nota/9617427/jack-cachorro-defecto-congenito-dejaron-plantado-dia-adopcion/",
+
+      "foto":"imagenesRegistradas/noticia06.jpg"  
+    },
+
+    {
+      "titulo":"Zeus pasó del abandono a ser pieza clave de la seguridad del Palacio Municipal de Guayaquil.",
+
+      "descripcion":"Su nombre denota poder y fuerza y no es para menos al ser eje fundamental de la brigada de seguridad del Municipio de Guayaquil. Se trata de Zeus, un perro de un año aproximadamente que llegó a la Plaza de la Administración, en el centro de la urbe, en condición de abandono.",
+
+      "enlace":"https://www.eluniverso.com/entretenimiento/2021/01/30/nota/9607468/zeus-perro-plaza-administracion/",
+
+      "foto":"imagenesRegistradas/noticia07.jpg"  
+    },
+
+    {
+      "titulo":"La emoción de unos abuelos al conseguir adoptar un cachorro tras meses sin éxito por su edad.",
+
+      "descripcion":"El abuelo de Andriu se acercó a recoger a la perrita, y decidió sorprender a su mujer. “Su reacción lo dice todo”, dice su nieta, que grabó el emotivo momento y lo compartió en la red social, donde se ha convertido en viral con casi 50.000 ‘me gusta’.",
+
+      "enlace":"https://www.lavanguardia.com/cribeo/estilo-de-vida/20210518/7462433/emocion-abuelos-conseguir-adoptar-cachorro-meses-exito-edad.html",
+
+      "foto":"imagenesRegistradas/noticia08.jpeg"   
+    },
+
+    {
+      "titulo":"Municipalidad promueve Feria de Adopciones de Mascotas.",
+
+      "descripcion":"Según la entrevistada, al momento de que las familias concluyan con el proceso de adopción estarán recibiendo como parte de un incentivo un kit con los insumos básicos: bolsa de alimento, correa, collar, plato para colocar los alimentos, pañoleta conmemorativa y promocionales de las empresas amigas que apoyan la feria canina.",
+
+      "enlace":"https://dca.gob.gt/noticias-guatemala-diario-centro-america/municipalidad-promueve-feria-de-adopciones-de-mascotas/",
+
+      "foto":"imagenesRegistradas/noticia09.jpg"   
+    },
+
+    {
+      "titulo":"Este domingo adopta y salva una vida.",
+
+      "descripcion":"Las jornadas de adopción presenciales cumplen con protocolos de bioseguridad y con el objetivo de educar a la ciudadanía para evitar actitudes que vayan en contra del bienestar animal y ofrecer una nueva vida a perritos que han atravesado situaciones difíciles como el abandono, malos tratos o emergencias.",
+
+      "enlace":"http://www.quitoinforma.gob.ec/2021/06/23/este-domingo-adopta-y-salva-una-vida/",
+
+      "foto":"imagenesRegistradas/noticia10.jpg"   
+    }
+  ]
+}
