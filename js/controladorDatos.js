@@ -1,15 +1,8 @@
-let botonAccion = document.getElementById("envio");
-
-botonAccion.addEventListener("click", ()=>
-{
-  alert("¡Éxito!, Sus datos han sido enviados al sistema.");
-});
-
-let form = document.querySelector('.form-register');
+let formu = document.querySelector('.form-register');
 
 let progressOptions = document.querySelectorAll('.progressbar__option');
 
-form.addEventListener('click', function(e) 
+formu.addEventListener('click', function(e) 
 {
     
     let element = e.target;
@@ -51,4 +44,9 @@ form.addEventListener('click', function(e)
         
         jumpStep.classList.remove('inactive');
     }
+});
+
+document.getElementById("envio").addEventListener("click", ()=>
+{
+  alert("¡Éxito!, Sus datos han sido enviados al sistema.");
 });
