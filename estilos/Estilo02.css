@@ -21,6 +21,18 @@
   }
 }
 
+#tuto
+{
+    display: none;
+}
+
+@media (min-width: 992px)
+{
+  #tuto{
+    display: block;
+  }
+}
+
 #misionVision > div{
   background-color: rgb(168, 237, 255);
   padding: 5px;
