@@ -1,9 +1,18 @@
 /*-------------------Esto es para el carrusel de imagenes-------------------*/
 .contenido{
-	width: 40%;
+	width: 60%;
 	margin: auto;
   margin-top: 20px;
-	/*padding: 5px;*/
+}
+
+@media(max-width: 992px)
+{
+  .contenido
+  {
+	width: 80%;
+	margin: auto;
+  margin-top: 20px;
+  }
 }
 
 .imagenesPerros{
