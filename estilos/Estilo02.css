@@ -5,6 +5,22 @@
   grid-template-columns: repeat(2,1fr); 
 }
 
+#misionVision > div p:nth-child(2)
+{
+  text-align: justify;
+}
+
+@media (max-width: 800px)
+{
+  #misionVision
+  {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column; 
+  }
+}
+
 #misionVision > div{
   background-color: rgb(168, 237, 255);
   padding: 5px;
