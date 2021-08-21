@@ -5,24 +5,29 @@ let usuarios =
 {
   "JoseAlcivar":
   {
+      "nombre":"José Alcivar",
       "usuario":"JoseAlcivar",
-      "clave":"josealcivar"
+      "clave":"josealcivar",
+      "correo":"josealci@espol.edu.ec"
   },
 
   "AndresMorales":
   {
+      "nombre":"Andrés Morales",
       "usuario":"AndresMorales",
       "clave":"andresmorales"
   },
 
   "KellyVaque":
   {
+      "nombre":"Kelly Vaque",
       "usuario":"KellyVaque",
       "clave":"kellyvaque"
   },
 
   "GustavoChonillo":
   {
+      "nombre":"Gustavo Chonillo",
       "usuario":"GustavoChonillo",
       "clave":"gustavochonillo"
   }
@@ -37,29 +42,20 @@ router.post('/validate', function(req, res, next) {
   let usuario = req.body.usuario;
   let contrasenia = req.body.clave;
 
-  console.log("usuario: ", usuario)
-  console.log("contraseña: ", contrasenia)
-
   if(usuarios.hasOwnProperty(usuario)){
-    if(usuario == usuarios[usuario].usuario && contrasenia == usuarios[usuario].clave){
-      res.redirect('/hola')
+    if(usuario == usuarios[usuario].usuario && contrasenia == usuarios[usuario].clave)
+    {
+      res.redirect('/cuenta/'+usuario);
     }
 
     else {
     res.redirect('/')
-  }
+    }
   }
 
   else {
     res.redirect('/')
   }
-
-  //Validación
-  //if(usuario == bd['usuario'] && contrasenia == bd['contrasenia']) {
-  //  res.redirect('/');
-  //} else {
-  //  res.redirect('/login')
-  //}
 
 });
 
