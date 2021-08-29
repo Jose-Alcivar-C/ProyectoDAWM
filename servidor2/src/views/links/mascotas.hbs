@@ -1,0 +1,18 @@
+<div class="container p-4">
+    <div class="rw">
+        {{#each mascotas}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div calss="card-body">
+                        <h3>
+                            {{ciudad}}
+                        </h3>
+                        <p>{{ timeago fecha_creacion }}</p>
+                        <a href="" class="btn btn-danger">Borrar mascota</a>
+                        <a href="" class="btn btn-secondary">Editar mascota</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

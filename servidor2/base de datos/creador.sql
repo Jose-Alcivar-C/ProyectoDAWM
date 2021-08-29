@@ -27,7 +27,8 @@ create table if not exists mensaje(
     id_mensaje int(10) not null,
     mensaje text not null,
     id_usuario int(10) not null,
-    constraint fk_mensaje foreign key (id_usuario) references usuario(id_usuario)
+    fecha_creacion timestamp not null default current_timestamp,
+    constraint fk_mensaje foreign key (id_usuario) references usuario(id_usuario) 
 );
 
 alter table mensaje
@@ -44,6 +45,7 @@ create table if not exists noticia(
     descripcion text not null,
     enlace varchar(50) not null,
     id_usuario int(10) not null,
+    fecha_creacion timestamp not null default current_timestamp,
     constraint fk_noticia foreign key (id_usuario) references usuario(id_usuario)
 );
 
@@ -63,8 +65,8 @@ create table if not exists mascota(
     url_foto varchar(60) not null,
     ciudad varchar(25) not null,
     raza varchar(20) not null,
-    id_usuario int(10) not null,
-    disponible boolean not null,
+    id_usuario int(10),
+    fecha_creacion timestamp not null default current_timestamp,
     constraint fk_mascota foreign key (id_usuario) references usuario(id_usuario)
 );
 
