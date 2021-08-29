@@ -1,0 +1,57 @@
+{{!-- formulario de mascotas --}}
+
+<div class="container p-4">
+
+    <div class="row">
+
+        <div class="col-md-4 mx-auto">
+
+            <div class="card">
+
+                <div class="card-body"> 
+
+                    <form action="/links/mascotas/editar/{{mascota.id_mascota}}" method="POST">
+
+                        <div class="form-group">
+                            <input type="text" value="{{mascota.nombre}}" class="form-control" name="nombre" placeholder="Nombre mascota">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" value="{{mascota.edad}}" class="form-control" name="edad" placeholder="Edad mascota (meses)">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" value="{{mascota.sexo}}" class="form-control" name="sexo" placeholder="Sexo de mascota">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea type="text" class="form-control" name="descripcion" placeholder="Descripción de mascota" rows="2">{{mascota.descripcion}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" value="{{mascota.url_foto}}" class="form-control" name="url_foto" placeholder="enlace a foto de mascota">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" value="{{mascota.ciudad}}" class="form-control" name="ciudad" placeholder="Ciudad de la mascota">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" value="{{mascota.raza}}" class="form-control" name="raza" placeholder="raza de la mascota">
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">Guardar</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
