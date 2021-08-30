@@ -26,7 +26,6 @@ router.post("/mascotas/anadir", async (req, res) => {
     };
     
     await pool.query("INSERT INTO mascota set ?", [newLink]);
-    
     res.redirect("/links/mascotas");
 });
 
