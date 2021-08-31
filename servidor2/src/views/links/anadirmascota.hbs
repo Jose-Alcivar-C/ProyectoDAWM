@@ -1,6 +1,6 @@
 {{!-- formulario de mascotas --}}
 
-<div class="container p-4">
+<div class="container p-1">
 
     <div class="row">
 
@@ -13,18 +13,26 @@
                     <form action="/links/mascotas/anadir" method="POST">
 
                         <div class="form-group">
+                            <label for="nombre">Nombre mascota</label>
                             <input type="text" class="form-control" name="nombre" placeholder="Nombre mascota">
                         </div>
 
                         <div class="form-group">
+                            <label for="edad">Edad mascota</label>
                             <input type="number" class="form-control" name="edad" placeholder="Edad mascota (meses)">
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" name="sexo" placeholder="Sexo de mascota">
+                            <label for="sexo">Sexo mascota</label>
+                            <select name="sexo" id="sexo">
+                                <option value="macho">Macho</option>
+                                <option value="hembra">Hembra</option>
+                            </select>
+                            
                         </div>
 
                         <div class="form-group">
+                            <label for="descripcion">Descripción mascota</label>
                             <textarea type="text" class="form-control" name="descripcion" placeholder="Descripción de mascota" rows="2"></textarea>
                         </div>
 
@@ -33,15 +41,17 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="ciudad">Ciudad mascota</label>
                             <input type="text" class="form-control" name="ciudad" placeholder="Ciudad de la mascota">
                         </div>
 
                         <div class="form-group">
+                            <label for="raza">Raza mascota</label>
                             <input type="text" class="form-control" name="raza" placeholder="raza de la mascota">
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-success btn-block">Guardar</button>
+                            <button class="btn btn-success btn-block">Guardar datos</button>
                         </div>
 
                     </form>

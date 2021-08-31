@@ -15,18 +15,27 @@ router.post("/mascotas/anadir", async (req, res) => {
 
     const{ nombre, edad, sexo, descripcion, url_foto, ciudad, raza } = req.body;
 
-    const newLink = {
-        nombre, 
-        edad, 
-        sexo, 
-        descripcion, 
-        url_foto, 
-        ciudad, 
-        raza
-    };
-    
-    await pool.query("INSERT INTO mascota set ?", [newLink]);
-    res.redirect("/links/mascotas");
+    if( (nombre !="") && (sexo !="") && (edad !="") && (descripcion !="") && (url_foto !="") && (ciudad !="") && (raza !="") ){
+
+        const newLink = {
+            nombre, 
+            edad, 
+            sexo, 
+            descripcion, 
+            url_foto, 
+            ciudad, 
+            raza
+        };
+        
+        await pool.query("insert into mascota set ?", [newLink]);
+        req.flash("exito", "Mascota registrada con éxito.");
+        res.redirect("/links/mascotas");
+    }
+
+    else{
+        req.flash("exito", "Por favor, llene todos los campos");
+        res.redirect("/links/mascotas/anadir");
+    }
 });
 
 //ventana para mostrar mascotas
@@ -40,6 +49,7 @@ router.get("/mascotas", async (req, res) => {
 router.get("/mascotas/borrar/:id", async (req, res) =>{
     const { id } = req.params;
     await pool.query("delete from mascota where id_mascota = ?", [id]);
+    req.flash("exito", "Mascota borrada con éxito.");
     res.redirect("/links/mascotas");
 });
 
@@ -65,6 +75,7 @@ router.post("/mascotas/editar/:id", async (req, res) =>{
     };
 
     await pool.query("update mascota set ? where id_mascota = ?", [nuevosDatos, id]);
+    req.flash("exito", "Datos de mascota actualizados con éxito.");
     res.redirect("/links/mascotas");
 });
 

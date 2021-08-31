@@ -1,22 +1,35 @@
-<div class="container p-4">
+<div class="container p-1">
     <div class="row">
         {{#each mascotas}}
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <h3>
-                            {{ciudad}}
+                            {{nombre}}
                         </h3>
-                        <p>{{ timeago fecha_creacion }}</p>
+
+                        <h5>
+                            {{raza}}, {{edad}} años, {{sexo}}
+                        </h5>
+
+                        <h1>
+                            Aquí va una imagen
+                        </h1>
+
+                        <h5>
+                            {{descripcion}}
+                        </h5>
+                        
                         <a href="/links/mascotas/borrar/{{id_mascota}}" class="btn btn-danger">Borrar mascota</a>
                         <a href="/links/mascotas/editar/{{id_mascota}}" class="btn btn-secondary">Editar mascota</a>
+                        <p>Creado: {{ timeago fecha_creacion }}</p>
                     </div>
                 </div>
             </div>
         {{ else }}
             <div class="col-md-4 mx-auto">
                 <div class="card card-body text-center">
-                    <p>No hay mascotas registradas para su usuario</p>
+                    <p>No hay mascotas registradas para su usuario.</p>
                     <a href="/links/mascotas/anadir">¿Deseas registrar una mascota?</a>
                 </div>
             </div>
