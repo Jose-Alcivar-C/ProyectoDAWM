@@ -29,12 +29,12 @@ router.post("/mascotas/anadir", async (req, res) => {
         
         await pool.query("insert into mascota set ?", [newLink]);
         req.flash("exito", "Mascota registrada con éxito.");
-        res.redirect("/links/mascotas");
+        res.redirect("/usuario/mascotas");
     }
 
     else{
         req.flash("exito", "Por favor, llene todos los campos");
-        res.redirect("/links/mascotas/anadir");
+        res.redirect("/usuario/mascotas/anadir");
     }
 });
 
@@ -50,7 +50,7 @@ router.get("/mascotas/borrar/:id", async (req, res) =>{
     const { id } = req.params;
     await pool.query("delete from mascota where id_mascota = ?", [id]);
     req.flash("exito", "Mascota borrada con éxito.");
-    res.redirect("/links/mascotas");
+    res.redirect("/usuario/mascotas");
 });
 
 //ventana para editar una mascota
@@ -76,7 +76,7 @@ router.post("/mascotas/editar/:id", async (req, res) =>{
 
     await pool.query("update mascota set ? where id_mascota = ?", [nuevosDatos, id]);
     req.flash("exito", "Datos de mascota actualizados con éxito.");
-    res.redirect("/links/mascotas");
+    res.redirect("/usuario/mascotas");
 });
 
 //---------------------------------------------------PARA LAS NOTICIAS----------------------------------------------------------------

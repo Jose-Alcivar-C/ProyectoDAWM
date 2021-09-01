@@ -12,7 +12,7 @@ helpers.encriptarContrasenia = async (contrasenia) => {
 
 helpers.verificarContrasenia = async (contrasenia, claveGuardada) =>{
     try{
-        await bcrypt.compare(contrasenia, claveGuardada);
+        return await bcrypt.compare(contrasenia, claveGuardada);
     }
 
     catch(e){

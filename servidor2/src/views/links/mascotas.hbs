@@ -20,8 +20,8 @@
                             {{descripcion}}
                         </h5>
                         
-                        <a href="/links/mascotas/borrar/{{id_mascota}}" class="btn btn-danger">Borrar mascota</a>
-                        <a href="/links/mascotas/editar/{{id_mascota}}" class="btn btn-secondary">Editar mascota</a>
+                        <a href="/usuario/mascotas/borrar/{{id_mascota}}" class="btn btn-danger">Borrar mascota</a>
+                        <a href="/usuario/mascotas/editar/{{id_mascota}}" class="btn btn-secondary">Editar mascota</a>
                         <p>Creado: {{ timeago fecha_creacion }}</p>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
             <div class="col-md-4 mx-auto">
                 <div class="card card-body text-center">
                     <p>No hay mascotas registradas para su usuario.</p>
-                    <a href="/links/mascotas/anadir">¿Deseas registrar una mascota?</a>
+                    <a href="/usuario/mascotas/anadir">¿Deseas registrar una mascota?</a>
                 </div>
             </div>
         {{/each}}

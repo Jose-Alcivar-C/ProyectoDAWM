@@ -1,3 +1,4 @@
+const { Router } = require("express");
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
@@ -14,7 +15,20 @@ router.post("/registrese", passport.authenticate("registro.local", {
 }));
 
 router.get("/usuario", (req, res) => {
-    res.send("este es tu perfil");
+    res.render("principal");
 });
 
+//--------------------PARA INCIAR SESION--------------------------------
+
+router.get("/login", (req, res) => {
+    res.render("autenticacion/ingreso");    
+});
+
+router.post("/login", (req, res, next) => {
+    passport.authenticate("ingreso.local", {
+       successRedirect: "/usuario",
+       failureRedirect:"/login",
+       failureFlash: true
+    })(req, res, next);
+});
 module.exports = router;

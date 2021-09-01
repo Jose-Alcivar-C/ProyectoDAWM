@@ -4,6 +4,7 @@ const pool = require("../database");
 const helpers = require("../lib/helpers");
 
 //-----------------------------------------PARA REGISTRARSE---------------------------------------------
+
 passport.use("registro.local", new LocalStrategy({
     usernameField: "usuario",
     passwordField: "contrasenia",
@@ -44,3 +45,28 @@ passport.deserializeUser( async (id_usuario, done) => {
 });
 
 //------------------------------------------PARA LOGUEARSE--------------------------------------------------------------
+
+passport.use("ingreso.local", new LocalStrategy({
+    usernameField:"usuario",
+    passwordField:"contrasenia",
+    passReqToCallback: true
+}, async (req, usuario, contrasenia, done)=> {
+    const rows = await pool.query("select * from usuario where usuario = ?", [usuario]);
+    if(rows.length > 0){
+        const usu = rows[0];
+        const claveValida = await helpers.verificarContrasenia(contrasenia, usu.contrasenia);
+
+        if(claveValida){
+            done(null, usu, req.flash("exito", "Bienvenido "+ usu.nombre));
+        }
+
+        else{
+            done(null, false, req.flash("message", "Clave incorrecta."));
+        }
+    }
+
+    else{
+        return done(null, false, req.flash("message" ,"Usuario no existe."));
+    }
+}));
+
