@@ -57,16 +57,16 @@ passport.use("ingreso.local", new LocalStrategy({
         const claveValida = await helpers.verificarContrasenia(contrasenia, usu.contrasenia);
 
         if(claveValida){
-            done(null, usu, req.flash("exito", "Bienvenido "+ usu.nombre));
+            done(null, usu, req.flash("exito", "Inicio de sesión satisfactorio"));
         }
 
         else{
-            done(null, false, req.flash("message", "Clave incorrecta."));
+            done(null, false, req.flash("message", "Usuario o clave incorrectos."));
         }
     }
 
     else{
-        return done(null, false, req.flash("message" ,"Usuario no existe."));
+        return done(null, false, req.flash("message" ,"Usuario o clave incorrectos."));
     }
 }));
 
