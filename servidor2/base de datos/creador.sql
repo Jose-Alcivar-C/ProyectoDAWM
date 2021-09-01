@@ -5,14 +5,14 @@ USE proyectodawn;
 -- -------------------------------------TABLA DE USUARIOS-------------------------------------------------
 create table if not exists usuario(
     id_usuario int(10) not null,
-    nombre varchar(15) not null,
-    apellido varchar(15) not null,
-    direccion varchar(30) not null,
-    correo varchar(25) not null,
+    nombre varchar(30) not null,
+    apellido varchar(30) not null,
+    direccion varchar(40) not null,
+    correo varchar(30) not null,
     rol enum("administrador", "usuario") not null,
     nacimiento date not null,
-    usuario varchar(20) not null,
-    contaseña varchar(15) not null,
+    usuario varchar(25) not null,
+    contrasenia text not null,
     fecha_creacion timestamp not null default current_timestamp
 );
 
@@ -40,10 +40,10 @@ alter table mensaje
 -- -------------------------------------TABLA DE NOTICIA-------------------------------------------------
 create table if not exists noticia(
     id_noticia int(10) not null,
-    url_foto varchar(100) not null,
+    url_foto text not null,
     titulo varchar(50) not null,
     descripcion text not null,
-    enlace varchar(50) not null,
+    enlace text not null,
     id_usuario int(10) not null,
     fecha_creacion timestamp not null default current_timestamp,
     constraint fk_noticia foreign key (id_usuario) references usuario(id_usuario)
