@@ -5,10 +5,10 @@ USE proyectodawn;
 -- -------------------------------------TABLA DE USUARIOS-------------------------------------------------
 create table if not exists usuario(
     id_usuario int(10) not null,
-    nombre varchar(30) not null,
-    apellido varchar(30) not null,
-    direccion varchar(40) not null,
-    correo varchar(30) not null,
+    nombre varchar(40) not null,
+    apellido varchar(40) not null,
+    direccion varchar(60) not null,
+    correo varchar(40) not null,
     rol enum("administrador", "usuario") not null,
     nacimiento date not null,
     usuario varchar(25) not null,
@@ -41,7 +41,7 @@ alter table mensaje
 create table if not exists noticia(
     id_noticia int(10) not null,
     url_foto text not null,
-    titulo varchar(50) not null,
+    titulo text not null,
     descripcion text not null,
     enlace text not null,
     id_usuario int(10) not null,
@@ -58,13 +58,13 @@ alter table noticia
 -- -------------------------------------TABLA DE MASCOTAS-------------------------------------------------
 create table if not exists mascota(
     id_mascota int(10) not null,
-    nombre varchar(15) not null,
+    nombre varchar(20) not null,
     edad varchar(10) not null,
     sexo varchar(10) not null,
     descripcion text not null,
-    url_foto varchar(60) not null,
-    ciudad varchar(25) not null,
-    raza varchar(20) not null,
+    url_foto text not null,
+    ciudad varchar(50) not null,
+    raza varchar(50) not null,
     id_usuario int(10),
     fecha_creacion timestamp not null default current_timestamp,
     constraint fk_mascota foreign key (id_usuario) references usuario(id_usuario)

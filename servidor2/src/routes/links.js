@@ -6,7 +6,7 @@ const pool = require("../database");
 
 const { estaLogueado } = require("../lib/verificador");
 
-//---------------------------------------------------PARA LAS MASCOTAS----------------------------------------------------------------
+//-------------------------------------------------------PARA LAS MASCOTAS--------------------------------------------------------------------
 //ventana para añadir mascota
 router.get("/mascotas/anadir", estaLogueado, (req, res) => {
     res.render("links/anadirmascota");
@@ -24,7 +24,8 @@ router.post("/mascotas/anadir", estaLogueado, async (req, res) => {
             descripcion, 
             url_foto, 
             ciudad, 
-            raza
+            raza,
+            id_usuario: req.user.id_usuario
         };
         
         await pool.query("insert into mascota set ?", [newLink]);
@@ -35,7 +36,7 @@ router.post("/mascotas/anadir", estaLogueado, async (req, res) => {
 //ventana para mostrar mascotas
 router.get("/mascotas", estaLogueado, async (req, res) => {
     
-    const mascotas = await pool.query("select * from mascota");
+    const mascotas = await pool.query("select * from mascota where id_usuario = ?", [req.user.id_usuario]);
     res.render("links/mascotas", {mascotas: mascotas});
 });
 
@@ -73,5 +74,75 @@ router.post("/mascotas/editar/:id", estaLogueado, async (req, res) =>{
     res.redirect("/usuario/mascotas");
 });
 
-//---------------------------------------------------PARA LAS NOTICIAS----------------------------------------------------------------
+//-------------------------------------------------------PARA LAS NOTICIAS--------------------------------------------------------------------
+
+//ventana para añadir noticia
+router.get("/noticias/anadir", estaLogueado, (req, res) => {
+    res.render("links/anadirnoticia");
+});
+
+//añadir noticia
+router.post("/noticias/anadir", estaLogueado, async (req, res) => {
+
+    const{ titulo, descripcion, enlace, url_foto } = req.body;
+
+        const nuevaNoticia = {
+            url_foto,
+            titulo,
+            descripcion,
+            enlace,
+            id_usuario: req.user.id_usuario
+        };
+        
+        await pool.query("insert into noticia set ?", [nuevaNoticia]);
+        req.flash("exito", "Noticia creada con éxito.");
+        res.redirect("/usuario/noticias");
+});
+
+//ventana para mostrar noticias
+router.get("/noticias", estaLogueado, async (req, res) => {
+    
+    const noticias = await pool.query("select * from noticia where id_usuario = ?", [req.user.id_usuario]);
+    var seHace = true;
+
+    if(noticias.length == 0){
+        seHace = false;
+    }
+
+    console.log(seHace);
+
+    res.render("links/noticias", {noticias: noticias, seHace: seHace} );
+});
+
+//borrar una noticia
+router.get("/noticias/borrar/:id", estaLogueado, async (req, res) =>{
+    const { id } = req.params;
+    await pool.query("delete from noticia where id_noticia = ?", [id]);
+    req.flash("exito", "Noticia borrada con éxito.");
+    res.redirect("/usuario/noticias");
+});
+
+//ventana para editar una noticia
+router.get("/noticias/editar/:id", estaLogueado, async (req, res) =>{
+    const { id } = req.params;
+    const noticia = await pool.query("select * from noticia where id_noticia =?", [id]);
+    res.render("links/editarnoticia", { noticia: noticia[0] });
+});
+
+//editar noticia
+router.post("/noticias/editar/:id", estaLogueado, async (req, res) =>{
+    const { id } = req.params;
+    const { titulo, descripcion, enlace, url_foto } = req.body;
+    const nuevosDatos = {
+        url_foto,
+        titulo,
+        descripcion,
+        enlace,
+    };
+
+    await pool.query("update noticia set ? where id_noticia = ?", [nuevosDatos, id]);
+    req.flash("exito", "Datos de noticia actualizados con éxito.");
+    res.redirect("/usuario/noticias");
+});
+
 module.exports = router;
