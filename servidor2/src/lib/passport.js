@@ -10,28 +10,38 @@ passport.use("registro.local", new LocalStrategy({
     passwordField: "contrasenia",
     passReqToCallback: true
 }, async (req, usuario, contrasenia, done) => {
-    const { nombre, apellido, direccion, correo, dia, mes, anio} = req.body;
 
-    const nacimiento = anio + "-" + mes + "-" + dia;
-    
-    const nuevoUsuario = {
-        nombre,
-        apellido,
-        direccion,
-        correo,
-        rol: 2,
-        nacimiento,
-        usuario, 
-        contrasenia
+    const rows = await pool.query("select * from usuario where usuario = ?", [usuario]);
+
+    if(rows.length<1){
+        
+        const { nombre, apellido, direccion, correo, dia, mes, anio} = req.body;
+
+        const nacimiento = anio + "-" + mes + "-" + dia;
+        
+        const nuevoUsuario = {
+            nombre,
+            apellido,
+            direccion,
+            correo,
+            rol: 2,
+            nacimiento,
+            usuario, 
+            contrasenia
+        }
+        
+        nuevoUsuario.contrasenia = await helpers.encriptarContrasenia(contrasenia);
+
+        const result = await pool.query("insert into usuario set ?", [nuevoUsuario]);
+        
+        nuevoUsuario.id_usuario = result.insertId; 
+
+        return done(null, nuevoUsuario);
     }
-    
-    nuevoUsuario.contrasenia = await helpers.encriptarContrasenia(contrasenia);
 
-    const result = await pool.query("insert into usuario set ?", [nuevoUsuario]);
-    
-    nuevoUsuario.id_usuario = result.insertId; 
-
-    return done(null, nuevoUsuario);
+    else{
+        return done(null, false, req.flash("message" ,"Este nombre de usuario ya existe"));
+    }
 }));   
 
 

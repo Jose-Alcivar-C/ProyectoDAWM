@@ -52,12 +52,15 @@
 </head>
 
 <body>
-    {{> barraNavegacion}}
+    <header class="barraFija">
+        {{> barraNavegacion}}
+    </header>
 
-    {{> mensajes}}
-
-    {{{ body }}}
-
+    <main class="contenido">
+        {{> mensajes}}
+        {{{ body }}}
+    </main>
+    
     {{!-- SCRIPTS --}}
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -6,3 +6,19 @@
 th, td {
     text-align: justify;
 }
+
+.barraFija {
+	position:fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1; 
+}
+
+.contenido{
+    padding-top: 4rem;
+    z-index: 2;
+}
+
+.pintarBoton{
+    background-color:#56cfab;
+}

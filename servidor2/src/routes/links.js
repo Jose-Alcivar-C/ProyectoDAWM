@@ -145,4 +145,5 @@ router.post("/noticias/editar/:id", estaLogueado, async (req, res) =>{
     res.redirect("/usuario/noticias");
 });
 
+//-------------------------------------------------------PARA LOS MENSAJES--------------------------------------------------------------------
 module.exports = router;
