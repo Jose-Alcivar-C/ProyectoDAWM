@@ -6,6 +6,7 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const mySqlStore = require("express-mysql-session");
 const passport = require("passport");
+const cors = require("cors");
 
 const { database } = require("./keys");
 
@@ -38,6 +39,8 @@ app.use(session({
     saveUninitialized: false,
     store: new mySqlStore(database)
 }));
+
+app.use(cors());
 
 app.use(flash());
 
