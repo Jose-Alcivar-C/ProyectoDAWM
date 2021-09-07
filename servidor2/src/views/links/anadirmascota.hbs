@@ -14,7 +14,7 @@
 
                 <div class="card-body"> 
 
-                    <form action="/usuario/mascotas/anadir" method="post">
+                    <form action="/usuario/mascotas/anadir" method="post" enctype="multipart/form-data">
 
                         <div class="form-group">
                             <label for="nombre">Nombre mascota</label>
@@ -22,13 +22,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="edad">Edad mascota</label>
+                            <label for="edad">Edad mascota (meses)</label>
                             <input type="number" class="form-control" name="edad" placeholder="Edad mascota (meses)" required>
                         </div>
 
                         <div class="form-group">
                             <label for="sexo">Sexo mascota</label>
-                            <select name="sexo" id="sexo">
+                            <select name="sexo" id="sexo" required>
                                 <option value="macho">Macho</option>
                                 <option value="hembra">Hembra</option>
                             </select>
@@ -40,8 +40,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="url_foto">Link hacia foto de la mascota:</label>
-                            <input type="text" class="form-control" name="url_foto" placeholder="enlace a foto de mascota" required>
+                            <label for="imagen">Foto de la mascota</label>
+                            <input type="file" class="form-control" name="imagen" required>
                         </div>
 
                         <div class="form-group">
@@ -55,7 +55,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-success btn-block pintarBoton">Guardar datos</button>
+                            <button type="submit" class="btn btn-success btn-block pintarBoton">Guardar datos</button>
                         </div>
 
                     </form>

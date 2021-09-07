@@ -7,6 +7,17 @@ const session = require("express-session");
 const mySqlStore = require("express-mysql-session");
 const passport = require("passport");
 const cors = require("cors");
+const multer = require("multer");
+const mimeTypes = require("mime-types");
+
+const almacenaje = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, "public/galeria"));
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now()+file.originalname+"."+mimeTypes.extension(file.mimetype));
+    }
+});
 
 const { database } = require("./keys");
 
@@ -54,6 +65,10 @@ app.use(passport.initialize());
 
 app.use(passport.session());
 
+app.use(multer({
+    storage: almacenaje,
+    dest: path.join(__dirname, "public/galeria")
+}).single("imagen"));
 
 //variables globales
 
@@ -77,4 +92,5 @@ app.use(express.static(path.join(__dirname, "public")));
 app.listen(app.get("port"), () => {
     console.log("Servidor en el puerto", app.get("port"));
 });
+
 

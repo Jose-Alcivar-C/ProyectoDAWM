@@ -15,22 +15,24 @@ router.get("/mascotas/anadir", estaLogueado, (req, res) => {
 //añadir mascota
 router.post("/mascotas/anadir", estaLogueado, async (req, res) => {
 
-    const{ nombre, edad, sexo, descripcion, url_foto, ciudad, raza } = req.body;
+    ruta = "http://localhost:3000/galeria/"+req.file.filename;
 
-        const newLink = {
-            nombre, 
-            edad, 
-            sexo, 
-            descripcion, 
-            url_foto, 
-            ciudad, 
-            raza,
-            id_usuario: req.user.id_usuario
-        };
-        
-        await pool.query("insert into mascota set ?", [newLink]);
-        req.flash("exito", "Mascota registrada con éxito.");
-        res.redirect("/usuario/mascotas");
+    const{ nombre, edad, sexo, descripcion, ciudad, raza } = req.body;
+
+    const newLink = {
+        nombre, 
+        edad, 
+        sexo, 
+        descripcion, 
+        url_foto: ruta, 
+        ciudad, 
+        raza,
+        id_usuario: req.user.id_usuario
+    };
+    
+    await pool.query("insert into mascota set ?", [newLink]);
+    req.flash("exito", "Mascota registrada con éxito.");
+    res.redirect("/usuario/mascotas");
 });
 
 //ventana para mostrar mascotas
@@ -58,13 +60,17 @@ router.get("/mascotas/editar/:id", estaLogueado, async (req, res) =>{
 //editar mascota
 router.post("/mascotas/editar/:id", estaLogueado, async (req, res) =>{
     const { id } = req.params;
-    const { nombre, edad, sexo, descripcion, url_foto, ciudad, raza } = req.body;
+
+    ruta = "http://localhost:3000/galeria/"+req.file.filename;
+
+    const { nombre, edad, sexo, descripcion, ciudad, raza } = req.body;
+
     const nuevosDatos = {
         nombre, 
         edad, 
         sexo, 
         descripcion, 
-        url_foto, 
+        url_foto : ruta, 
         ciudad, 
         raza 
     };

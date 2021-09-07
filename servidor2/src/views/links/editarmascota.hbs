@@ -12,7 +12,7 @@
 
                 <div class="card-body"> 
 
-                    <form action="/usuario/mascotas/editar/{{mascota.id_mascota}}" method="POST">
+                    <form action="/usuario/mascotas/editar/{{mascota.id_mascota}}" method="POST" enctype="multipart/form-data">
 
                         <div class="form-group">
                             <label for="nombre">Nombre mascota</label>
@@ -20,7 +20,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="edad">Edad mascota</label>
+                            <label for="edad">Edad mascota (meses)</label>
                             <input type="number" value="{{mascota.edad}}" class="form-control" name="edad" placeholder="Edad mascota (meses)" required>
                         </div>
 
@@ -38,8 +38,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="url_foto">Link hacia foto de la mascota:</label>
-                            <input type="text" value="{{mascota.url_foto}}" class="form-control" name="url_foto" placeholder="enlace a foto de mascota" required>
+                            <label for="imagen">Foto de la mascota</label>
+                            <input type="file" class="form-control" name="imagen" required>
                         </div>
 
                         <div class="form-group">
