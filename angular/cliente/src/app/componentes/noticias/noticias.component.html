@@ -1,3 +1,23 @@
 <div id="seccionNoticias">
-    
+
+    <div class="cajaNoticia" *ngFor="let noticia of noticias">
+
+        <div class="elementosNoticia">
+
+            <div class="fotoNoticia">
+
+                <img src="{{noticia.url_foto}}" alt="Imagen Noticia">
+
+            </div>
+                <p class="tituloNoticia">{{noticia.titulo}}</p>
+                <p class="desNoticia">{{noticia.descripcion}}</p>
+                <a href="{{noticia.enlace}}" target="_blank"><p>Visitar Noticia</p></a>
+            <div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>  

@@ -146,4 +146,5 @@ router.post("/noticias/editar/:id", estaLogueado, async (req, res) =>{
 });
 
 //-------------------------------------------------------PARA LOS MENSAJES--------------------------------------------------------------------
+
 module.exports = router;

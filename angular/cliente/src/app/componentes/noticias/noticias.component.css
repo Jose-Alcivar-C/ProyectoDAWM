@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: repeat(3,33%);
     justify-content: space-between;
-    padding: 5px;
   }
   
   @media (max-width: 800px)
@@ -70,5 +69,9 @@
   
   .oculto{
     display: none;
+  }
+
+  a{
+    color: #78c2ad;
   }
   

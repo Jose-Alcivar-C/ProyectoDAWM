@@ -66,6 +66,7 @@ app.use((req, res, next) => {
 
 //rutas
 app.use(require("./routes/autenticador.js"));
+app.use("/valores", require("./routes/alcliente.js"));
 app.use("/usuario", require("./routes/links.js"));
 
 //archivos publicos
