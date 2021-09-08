@@ -15,9 +15,8 @@ export class EnadopcionComponent implements OnInit {
     fetch("http://localhost:3000/valores/mascotas")
     .then(response => response.json())
     .then(data => {
-        this.mascotas= data;
+        this.mascotas = data;
     })
     .catch(console.error);
   }
-
 }
