@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnadopcionComponent implements OnInit {
 
+  mascotas: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    fetch("http://localhost:3000/valores/mascotas")
+    .then(response => response.json())
+    .then(data => {
+        this.mascotas= data;
+    })
+    .catch(console.error);
   }
 
 }
